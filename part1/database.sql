@@ -17,7 +17,7 @@ CREATE TABLE books(
     location VARCHAR(100),
     available BOOLEAN DEFAULT TRUE,
     seller_id INT NOT NULL,
-    FOREIGN KEY (seller_id) REFERENCES users(user_id)
+    FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
 CREATE TABLE authors(

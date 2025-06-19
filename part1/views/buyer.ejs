@@ -75,7 +75,8 @@
                 sendMessage(){
                     fetch('/message', {
                         method: 'POST',
-                        headers: { 'Content'}
+                        headers: { 'Content-Type': 'application/json' },
+                        seller_id
                     })
                 }
             }

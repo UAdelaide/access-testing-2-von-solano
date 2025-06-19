@@ -9,7 +9,9 @@ router.get('/', function(req, res, next) {
 router.get('/buyer', (req, res) => {
   debug.query(`
     SELECT b.book_id, b.title, b.price, b.location,
-    CONCAT(a.first_name, ' )
+    CONCAT(a.first_name, ' ', a.last_name) AS author
+    FROM books b
+    JOIN book
     `)
 
   res.render('buyer');

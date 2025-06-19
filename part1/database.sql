@@ -22,10 +22,10 @@ CREATE TABLE books(
 CREATE TABLE authors(
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE book_authors(
     FOREIGN KEY PRIMARY KEY book_id INT  REFERENCES book(book_id),
-    FOREIGN KEY author_id INT REFERENCES authors(author_id),
+    FOREIGN KEY PRIMARY KEY author_id INT REFERENCES authors(author_id)
 );

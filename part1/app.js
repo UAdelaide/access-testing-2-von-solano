@@ -43,7 +43,9 @@ app.get('/buyer', (req, res) => {
   });
 
 app.post('/message', (req, res) => {
-  const { sender_id, receiver_id }
-})
+  const { sender_id, receiver_id, message } = req.body;
+
+  if()
+});
 
 module.exports = app;

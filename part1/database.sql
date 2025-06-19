@@ -10,3 +10,9 @@ CREATE TABLE users(
     password VARCHAR(255) NOT NULL,
     location VARCHAR(100)
 );
+
+CREATE TABLE books(
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    
+
+);

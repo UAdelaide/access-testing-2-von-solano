@@ -7,11 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/buyer', (req, res) => {
-  res.render('buyer.ejs');
+  res.render('buyer');
 });
 
 router.get('/seller', (req, res) => {
-  res.render('seller.ejs');
+  res.render('seller');
 });
 
 module.exports = router;

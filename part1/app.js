@@ -43,15 +43,15 @@ app.get('/buyer', (req, res) => {
   });
 
 app.post('/message', (req, res) => {
-  const { sender_id, receiver_id, message } = req.body;
+  const { sender_id, seller_id, message } = req.body;
 
-  if(!sender_id || !receiver_id || !message){
+  if(!sender_id || !seller_id || !message){
     return res.status(400).send('missing fields');
   }
 
   const sql = `INSERT INTO messages (sender_id, receiver_id, message) VALUES (?, ?, ?)`;
 
-  db.query(sql, [sender_id, receiver_id, message], (err, result) => {
+  db.query(sql, [sender_id, seller_id, message], (err, result) => {
     if(err){
       console.error(err);
       return res.status(500).send('database error');

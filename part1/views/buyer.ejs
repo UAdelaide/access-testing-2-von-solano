@@ -45,7 +45,9 @@
     <div id="app">
         <div v-if="showForm">
             <h3>Send a message</h3>
-            <form @submit.prevent="send"
+            <form @submit.prevent="sendMessage">
+                <textarea v-model="message" placeholder=""
+            </form>
         </div>
     </div>
 

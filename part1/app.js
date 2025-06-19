@@ -45,7 +45,7 @@ app.get('/buyer', (req, res) => {
 app.get('/seller', (req, res) => {
   const seller_id = 2;
 
-  const sql = `SELECT message, sender_id FROM messages WHERE m.receiver_id = ?`;
+  const sql = `SELECT message, sender_id FROM messages WHERE receiver_id = ?`;
 
   db.query(sql, [seller_id], (err, results) => {
     if(err){

@@ -7,5 +7,6 @@ CREATE TABLE users(
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(100),
+    password VARCHAR(255)
 
 );

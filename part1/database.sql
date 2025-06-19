@@ -18,6 +18,5 @@ CREATE TABLE books(
     ISBN VARCHAR(20) NOT NULL,
     price DECIMAL(20,8),
     location VARCHAR(100),
-    
-
+    available BOOLEAN DEFAULT TRUE
 );

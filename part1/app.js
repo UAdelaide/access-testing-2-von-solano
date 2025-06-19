@@ -42,6 +42,8 @@ app.get('/buyer', (req, res) => {
       });
   });
 
-app.post
+app.post('/message', (req, res) => {
+  const { sender_id, receiver_id }
+})
 
 module.exports = app;

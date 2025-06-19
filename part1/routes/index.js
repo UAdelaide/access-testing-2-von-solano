@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/buyer', (req, res) => {
-  debug.query(`
+  db.query(`
     SELECT b.book_id, b.title, b.price, b.location,
     CONCAT(a.first_name, ' ', a.last_name) AS author
     FROM books b
@@ -16,7 +16,8 @@ router.get('/buyer', (req, res) => {
     WHERE b.available = 1
     `, (err, results) => {
       if(err) return res.status(500).send('database error');
-    })
+      res.rebder
+    });
 
   res.render('buyer');
 });

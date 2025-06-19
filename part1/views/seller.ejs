@@ -8,29 +8,35 @@
 </head>
 
 <body>
-    h2>Your messages</h2>
-        <% if (messages.length === 0){ %>
-            <p>No messages yet.</p>
+    <h2>Your messages</h2>
+    <% if (messages.length===0){ %>
+        <p>No messages yet.</p>
         <% } else { %>
             <table>
-            <thead>
-                <tr>
-                    <th>Book</th>
-                    <th>From Buyer (ID)</th>
-                    <th>Message</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% messages.forEacg(msg => { %>
+                <thead>
                     <tr>
-                        <td><%= msg.title %></td>
-                        <td><%= msg.sender_id %></td>
-                        <td><%= msg.message %></td>
+                        <th>Book</th>
+                        <th>From Buyer (ID)</th>
+                        <th>Message</th>
                     </tr>
-                <% }) %>
-            </tbody>
+                </thead>
+                <tbody>
+                    <% messages.forEacg(msg=> { %>
+                        <tr>
+                            <td>
+                                <%= msg.title %>
+                            </td>
+                            <td>
+                                <%= msg.sender_id %>
+                            </td>
+                            <td>
+                                <%= msg.message %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
             </table>
-        <% } %>
+            <% } %>
 
 </body>
 

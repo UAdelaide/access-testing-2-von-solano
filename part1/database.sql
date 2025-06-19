@@ -1,1 +1,2 @@
-CREATE DATABASE IF NOT EXISTS textbook_marketplace
+CREATE DATABASE IF NOT EXISTS textbook_marketplace;
+USE textbook_marketplace;

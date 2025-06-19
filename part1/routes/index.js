@@ -6,4 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/buyer', (req, res) => {
+  res.render('buyer');
+});
+
+router.get('/seller', (req, res) => {
+  res.render('seller');
+});
+
 module.exports = router;

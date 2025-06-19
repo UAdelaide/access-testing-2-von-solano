@@ -51,7 +51,10 @@ app.post('/message', (req, res) => {
 
   const sql = `INSERT INTO messages (sender_id, receiver_id, message) VALUES (?, ?, ?)`;
 
-  db.query(sql, [sender_id])
+  db.query(sql, [sender_id, receiver_id, message], (err, result) => {
+    if(err)
+
+  })
 
 });
 

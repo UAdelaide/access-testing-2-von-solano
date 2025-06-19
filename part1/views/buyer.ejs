@@ -35,11 +35,7 @@
                         <%= book.location %>
                     </td>
                     <td>
-                        <form action="/message" method="POST">
-                            <input type="hidden" name="seller_id" value="<%= book.seller_id %>">
-                            <input type="hidden" name="book_id" value="<%= book.book_id %>">
-                            <input type="submit" value="Message Seller">
-                        </form>
+                        <button @click="openForm"
                     </td>
                 </tr>
                 <% }) %>

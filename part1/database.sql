@@ -16,7 +16,8 @@ CREATE TABLE books(
     price DECIMAL(10,2),
     location VARCHAR(100),
     available BOOLEAN DEFAULT TRUE,
-    FOREIGN KEY seller_id INT REFERENCES users(user_id)
+    seller_id INT,
+    FOREIGN KEY seller_id REFERENCES users(user_id)
 );
 
 CREATE TABLE authors(
@@ -50,7 +51,7 @@ CREATE TABLE messages(
     sender_id INT NOT NULL,
     receiver_id INT NOT NULL,
     message TEXT NOT NULL,
-    TIME TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY sender_id REFERENCES users(user_id),
     FOREIGN KEY receiver_id REFERENCES users(user_id)

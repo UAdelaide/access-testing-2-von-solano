@@ -35,7 +35,9 @@
                         <%= book.location %>
                     </td>
                     <td>
-                        <form action="/message"></form>
+                        <form action="/message" method="POST">
+                            <input type="hidden"
+                        </form>
                     </td>
                 </tr>
                 <% }) %>

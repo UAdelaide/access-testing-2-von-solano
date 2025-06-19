@@ -6,7 +6,7 @@ CREATE TABLE users(
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE books(
@@ -16,7 +16,7 @@ CREATE TABLE books(
     price DECIMAL(10,2),
     location VARCHAR(100),
     available BOOLEAN DEFAULT TRUE,
-    FOREIGN KEY seller_id INT REFERENCES users(user_id),
+    FOREIGN KEY seller_id INT REFERENCES users(user_id)
 );
 
 CREATE TABLE authors(
@@ -53,5 +53,5 @@ CREATE TABLE messages(
     TIME TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY sender_id REFERENCES users(user_id),
-    FOREIGN KEY receiver_id REFERENCES users(user_id),
+    FOREIGN KEY receiver_id REFERENCES users(user_id)
 );

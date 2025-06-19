@@ -23,7 +23,9 @@
             <tbody>
                 <% messages.forEacg(msg => { %>
                     <tr>
-                        <td><%= msg.title </td>
+                        <td><%= msg.title %></td>
+                        <td><%= msg.sender_id %></td>
+                        <td><%= msg.message %></td>
                     </tr>
                 })
             </tbody>

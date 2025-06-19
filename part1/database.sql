@@ -35,6 +35,9 @@ CREATE TABLE book_authors(
 
 CREATE TABLE transactions(
     transaction_id INT AUTO_INCREMENT PRIMARY KEY,
+    buyer_id INT 
+
+
     FOREIGN KEY buyer_id INT REFERENCES users(user_id),
     FOREIGN KEY seller_id INT REFERENCES users(user_id),
     FOREIGN KEY book_id INT REFERENCES books(book_id),

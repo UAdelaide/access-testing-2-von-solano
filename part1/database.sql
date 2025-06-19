@@ -16,7 +16,7 @@ CREATE TABLE books(
     price DECIMAL(10,2),
     location VARCHAR(100),
     available BOOLEAN DEFAULT TRUE,
-    seller_id INT,
+    seller_id INT NOT NULL,
     FOREIGN KEY seller_id REFERENCES users(user_id)
 );
 

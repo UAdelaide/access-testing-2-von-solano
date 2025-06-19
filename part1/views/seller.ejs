@@ -15,7 +15,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Book</th>
                         <th>From Buyer (ID)</th>
                         <th>Message</th>
                     </tr>
@@ -23,9 +22,6 @@
                 <tbody>
                     <% messages.forEach(msg=> { %>
                         <tr>
-                            <td>
-                                <%= msg.title %>
-                            </td>
                             <td>
                                 <%= msg.sender_id %>
                             </td>

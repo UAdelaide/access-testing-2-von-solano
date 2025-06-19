@@ -6,7 +6,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-const mysql = require()
+const mysql = require('mysql2');
+const db = mysql.createPool()
 
 var app = express();
 

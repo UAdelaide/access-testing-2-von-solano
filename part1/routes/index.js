@@ -14,7 +14,9 @@ router.get('/buyer', (req, res) => {
     JOIN book_authors ba ON b.book_id = ba.book_id
     JOIN authors a ON ba.author_id = a.author_id
     WHERE b.available = 1
-    `)
+    `, (err, results) => {
+      if(err) return res.status(500)
+    })
 
   res.render('buyer');
 });

@@ -3,5 +3,6 @@ USE textbook_marketplace;
 
 -- USERS TABLE
 CREATE TABLE users(
-    
+    user_id INT PRIMARY KEY,
+    first_name VARCHAR(50)
 );

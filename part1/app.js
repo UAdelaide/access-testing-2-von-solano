@@ -29,4 +29,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.get('/buyer', (req, res) => {
+    db.query(`
+      SELECT b.book_id, b.title, b.price, b.location,
+      CONCAT(a.first_name, ' ', a.last_name) AS author
+      FROM books b
+      JOIN book_authors ba ON b.book_id = ba.book_id
+      JOIN authors a ON ba.author_id = a.author_id
+      WHERE b.available = 1
+      `, (err, results) => {
+        if(err) return res.status(500).send('database error');
+        res.render('buyer', { books: results });
+      });
+  });
+
 module.exports = app;

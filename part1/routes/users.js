@@ -6,6 +6,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/buyer', )
+router.get('/buyer', (req, res) => {
+  res.render('buyer.ejs')
+})
 
 module.exports = router;

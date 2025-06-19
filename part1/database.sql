@@ -4,9 +4,9 @@ USE textbook_marketplace;
 -- USERS TABLE
 CREATE TABLE users(
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    email VARCHAR(100),
-    password VARCHAR(255),
-    location VARCHAR(50)
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    location VARCHAR(100)
 );

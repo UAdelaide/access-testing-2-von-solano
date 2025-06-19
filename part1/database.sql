@@ -16,7 +16,7 @@ CREATE TABLE books(
     price DECIMAL(10,2),
     location VARCHAR(100),
     available BOOLEAN DEFAULT TRUE,
-    FOREIGN KEY seller_id INT AUTO_INCREMENT REFERENCES users(user_id),
+    FOREIGN KEY seller_id INT REFERENCES users(user_id),
 );
 
 CREATE TABLE authors(
@@ -26,5 +26,7 @@ CREATE TABLE authors(
 );
 
 CREATE TABLE book_authors(
-    
+    FOREIGN KEY book_id INT  REFERENCES book(user_id),
+    FOREIGN KEY author_id INT REFERENCES users(user_id),
+
 );

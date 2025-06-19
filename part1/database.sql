@@ -16,6 +16,6 @@ CREATE TABLE books(
     seller_id INT AUTO_INCREMENT REFERENCES usres(user_id),
     title VARCHAR(100) NOT NULL,
     ISBN VARCHAR(20) NOT NULL,
-    
+    price DECIMAL(20, 8)
 
 );

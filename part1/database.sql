@@ -26,7 +26,6 @@ CREATE TABLE authors(
 );
 
 CREATE TABLE book_authors(
-    FOREIGN KEY book_id INT  REFERENCES book(user_id),
-    FOREIGN KEY author_id INT REFERENCES users(user_id),
-
+    FOREIGN KEY PRIMARY KEY book_id INT  REFERENCES book(book_id),
+    FOREIGN KEY author_id INT REFERENCES authors(author_id),
 );

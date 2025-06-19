@@ -82,11 +82,14 @@
                         sender_id: 1
                     })
                     .then(res => res.ok ? alert('Message sent!') : alert('Error'))
-                    .then(() => )
+                    .then(() => {
+                        this.showForm = false;
+                        this.message = '';
+                    });
                 }
             }
 
-        })
+        });
     </script>
 
 </body>

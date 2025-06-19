@@ -52,8 +52,8 @@ app.get('/seller', (req, res) => {
       console.error(err);
       return res.status(500).send('database error');
     }
+    res.render('seller', { messages: results });
   });
-  res.render('seller', { messages: results });
 });
 
 

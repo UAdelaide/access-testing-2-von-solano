@@ -43,7 +43,7 @@ app.get('/buyer', (req, res) => {
   });
 
 app.get('/seller', (req, res) => {
-  res.render('seller', { messages});
+  res.render('seller', { messages: results });
 });
 
 

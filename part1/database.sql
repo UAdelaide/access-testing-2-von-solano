@@ -18,3 +18,7 @@ CREATE TABLE books(
     available BOOLEAN DEFAULT TRUE,
     FOREIGN KEY seller_id INT AUTO_INCREMENT REFERENCES users(user_id),
 );
+
+CREATE TABLE authors(
+
+);

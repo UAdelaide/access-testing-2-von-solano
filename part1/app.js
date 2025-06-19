@@ -42,6 +42,11 @@ app.get('/buyer', (req, res) => {
       });
   });
 
+app.get('/seller', (req, res) => {
+  res.render('seller', { messages});
+});
+
+
 app.post('/message', (req, res) => {
   const { sender_id, seller_id, message } = req.body;
 

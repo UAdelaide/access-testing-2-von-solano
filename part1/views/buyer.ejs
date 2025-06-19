@@ -35,7 +35,7 @@
                         <%= book.location %>
                     </td>
                     <td>
-                        <button @click="openForm(<%= book.book_id %>, <% book.seller_id %>)">Message Seller</button>
+                        <button @click="openForm(<%= book.book_id %>, <%= book.seller_id %>)">Message Seller</button>
                     </td>
                 </tr>
                 <% }) %>

@@ -81,7 +81,8 @@
                         message: this.message,
                         sender_id: 1
                     })
-                    .then(res => res.ok)
+                    .then(res => res.ok ? alert('Message sent!') : alert('Error'))
+                    .then(() => )
                 }
             }
 

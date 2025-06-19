@@ -39,5 +39,8 @@ CREATE TABLE transactions(
     seller_id INT NOT NULL,
     book_id INT NOT NULL,
     price DECIMAL(10,2),
-    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY buyer_id REFERENCES users(user_id),
+    FOREIGN KEY seller_id REFERENCES users(user_id),
+    FOREIGN KEY book_id REFERENCES books(book_id),
 );

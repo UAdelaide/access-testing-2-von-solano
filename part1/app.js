@@ -49,10 +49,10 @@ app.get('/seller', (req, res) => {
 
   db.query(sql, [seller_id], (err, results) => {
     if(err){
-      console.error
+      console.error(err);
+      return res.status(500).send('database error');
     }
-  })
-
+  });
   res.render('seller', { messages: results });
 });
 

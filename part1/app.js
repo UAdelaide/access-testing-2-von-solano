@@ -6,6 +6,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const mysql = require()
+
 var app = express();
 
 // VIEW ENGINE SETUP
@@ -17,8 +19,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-const db = db.connection
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -42,5 +42,5 @@ CREATE TABLE transactions(
     transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY buyer_id REFERENCES users(user_id),
     FOREIGN KEY seller_id REFERENCES users(user_id),
-    FOREIGN KEY book_id REFERENCES books(book_id),
+    FOREIGN KEY book_id REFERENCES books(book_id)
 );

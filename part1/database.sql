@@ -32,3 +32,9 @@ CREATE TABLE book_authors(
     FOREIGN KEY (book_id)  REFERENCES books(book_id),
     FOREIGN KEY (author_id) REFERENCES authors(author_id)
 );
+
+CREATE TABLE transactions(
+    transaction_id INT AUTO_INCREMENT PRIMARY KEY,
+    
+
+);

@@ -46,7 +46,9 @@
         <div v-if="showForm">
             <h3>Send a message</h3>
             <form @submit.prevent="sendMessage">
-                <textarea v-model="message" placeholder=""
+                <textarea v-model="message" placeholder="write your message here..."></textarea>
+                <input type="hidden" v-model="book_id">
+                <input type="hidden"
             </form>
         </div>
     </div>

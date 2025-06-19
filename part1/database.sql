@@ -17,7 +17,7 @@ CREATE TABLE books(
     location VARCHAR(100),
     available BOOLEAN DEFAULT TRUE,
     seller_id INT NOT NULL,
-    FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE CASCADE -- 
+    FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE CASCADE -- who is selling book
 );
 
 CREATE TABLE authors(
@@ -52,6 +52,6 @@ CREATE TABLE messages(
     receiver_id INT NOT NULL,
     message TEXT NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (sender_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (sender_id) REFERENCES users(user_id) ON DELETE CASCADE, -- delete messages and user if deleted
     FOREIGN KEY (receiver_id) REFERENCES users(user_id) ON DELETE CASCADE
 );

@@ -76,7 +76,10 @@
                     fetch('/message', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        seller_id
+                        seller_id: this.seller_id,
+                        book_id: this.book_id,
+                        message: this.message,
+                        sender
                     })
                 }
             }

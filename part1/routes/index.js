@@ -7,6 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/buyer', (req, res) => {
+  debug.query(`
+    
+    `)
+
   res.render('buyer');
 });
 

@@ -15,7 +15,7 @@ router.get('/buyer', (req, res) => {
     JOIN authors a ON ba.author_id = a.author_id
     WHERE b.available = 1
     `, (err, results) => {
-      if(err) return res.status(500)
+      if(err) return res.status(500).send('database error');
     })
 
   res.render('buyer');

@@ -11,7 +11,8 @@ router.get('/buyer', (req, res) => {
     SELECT b.book_id, b.title, b.price, b.location,
     CONCAT(a.first_name, ' ', a.last_name) AS author
     FROM books b
-    JOIN book
+    JOIN book_authors ba ON b.book_id = ba.book_id
+    JOIN authors
     `)
 
   res.render('buyer');

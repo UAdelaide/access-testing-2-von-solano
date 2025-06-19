@@ -8,7 +8,6 @@ var usersRouter = require('./routes/users');
 
 const mysql = require('mysql2');
 const db = mysql.createPool({
-    host: 'localhost',
     user: 'root',
     password: '',
     database: 'textbook_marketplace'

@@ -4,4 +4,4 @@ USE textbook_marketplace;
 -- USERS TABLE
 CREATE TABLE users(
     
-)
+);

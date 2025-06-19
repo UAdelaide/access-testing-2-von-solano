@@ -46,8 +46,11 @@ app.post('/message', (req, res) => {
   const { sender_id, receiver_id, message } = req.body;
 
   if(!sender_id || !receiver_id || !message){
-    return res.status(400).send()
+    return res.status(400).send("missing fields");
   }
+
+  
+
 });
 
 module.exports = app;

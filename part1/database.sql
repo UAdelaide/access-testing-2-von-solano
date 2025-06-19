@@ -17,7 +17,7 @@ CREATE TABLE books(
     location VARCHAR(100),
     available BOOLEAN DEFAULT TRUE,
     seller_id INT NOT NULL,
-    FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE CASCADE
+    FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE CASCADE -- 
 );
 
 CREATE TABLE authors(
@@ -41,7 +41,7 @@ CREATE TABLE transactions(
     book_id INT NOT NULL,
     price DECIMAL(10,2),
     transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (buyer_id) REFERENCES users(user_id) ON DELETE RESTRICT,
+    FOREIGN KEY (buyer_id) REFERENCES users(user_id) ON DELETE RESTRICT, -- cannot delete user in order to save history
     FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE RESTRICT,
     FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE RESTRICT
 );

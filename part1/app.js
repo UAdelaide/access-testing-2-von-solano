@@ -42,4 +42,6 @@ app.get('/buyer', (req, res) => {
       });
   });
 
+app.post
+
 module.exports = app;

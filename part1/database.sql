@@ -44,3 +44,8 @@ CREATE TABLE transactions(
     FOREIGN KEY seller_id REFERENCES users(user_id),
     FOREIGN KEY book_id REFERENCES books(book_id)
 );
+
+CREATE TABLE messages(
+    transaction_id INT AUTO_INCREMENT PRIMARY KEY,
+
+);

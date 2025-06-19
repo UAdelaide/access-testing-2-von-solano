@@ -4,10 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <title>Sell</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-    <p>THIS IS THE SELL PAGE</p>
+    <div id="app">
+    <h2>Textbooks</h2>
+    <table>
+        <caption>Available Textbooks</caption>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% books.forEach(book=> { %>
+                <tr>
+                    <td>
+                        <%= book.title %>
+                    </td>
+                    <td>
+                        <%= book.author %>
+                    </td>
+                    <td>$<%= book.price %>
+                    </td>
+                    <td>
+                        <%= book.location %>
+                    </td>
+                    <td>
+                        <button @click="openForm(<%= book.book_id %>, <%= book.seller_id %>)">Message Seller</button>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+        <div v-if="showForm">
+            <h3>Send a message</h3>
+            <form @submit.prevent="sendMessage">
+                <textarea v-model="message" placeholder="write your message here..."></textarea>
+                <input type="hidden" v-model="book_id">
+                <input type="hidden" v-model="seller_id">
+                <br>
+                <button type="submit">Send</button>
+                <button @click="showForm = false">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                showForm: false,
+                seller_id: null,
+                book_id: null,
+                message: ''
+            },
+            methods: {
+                openForm(book_id, seller_id){
+                    this.book_id = book_id;
+                    this.seller_id = seller_id;
+                    this.showForm = true;
+                },
+                sendMessage(){
+                    fetch('/message', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            seller_id: this.seller_id,
+                            book_id: this.book_id,
+                            message: this.message,
+                            sender_id: 1
+                        })
+                    })
+                    .then(res => res.ok ? alert('Message sent!') : alert('Error'))
+                    .then(() => {
+                        this.showForm = false;
+                        this.message = '';
+                    });
+                }
+            }
+        });
+    </script>
+
 </body>
 
 </html>

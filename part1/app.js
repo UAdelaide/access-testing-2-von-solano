@@ -30,7 +30,7 @@ app.use('/users', usersRouter);
 
 app.get('/buyer', (req, res) => {
     db.query(`
-      SELECT b.book_id, b.title, b.price, b.location, b.seller_id
+      SELECT b.book_id, b.title, b.price, b.location, b.seller_id,
       CONCAT(a.first_name, ' ', a.last_name) AS author
       FROM books b
       JOIN book_authors ba ON b.book_id = ba.book_id

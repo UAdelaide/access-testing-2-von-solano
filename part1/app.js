@@ -56,9 +56,8 @@ app.post('/message', (req, res) => {
       console.error(err);
       return res.status(500).send('database error');
     }
-    res.status(201).send('message sent';)
-  })
-
+    res.status(201).send('message sent');
+  });
 });
 
 module.exports = app;

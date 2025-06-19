@@ -35,12 +35,9 @@ CREATE TABLE book_authors(
 
 CREATE TABLE transactions(
     transaction_id INT AUTO_INCREMENT PRIMARY KEY,
-    buyer_id INT 
-
-
-    FOREIGN KEY buyer_id INT REFERENCES users(user_id),
-    FOREIGN KEY seller_id INT REFERENCES users(user_id),
-    FOREIGN KEY book_id INT REFERENCES books(book_id),
+    buyer_id INT NOT NULL,
+    seller_id INT NOT NULL,
+    book_id INT NOT NULL,
     price DECIMAL(10,2),
     transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

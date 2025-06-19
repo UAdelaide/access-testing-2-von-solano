@@ -13,7 +13,7 @@ CREATE TABLE users(
 
 CREATE TABLE books(
     book_id INT AUTO_INCREMENT PRIMARY KEY,
-    seller_id INT AUTO_INCREMENT REFERENCES usres(user_id),
+    seller_id INT AUTO_INCREMENT REFERENCES users(user_id),
     title VARCHAR(100) NOT NULL,
     ISBN VARCHAR(20) NOT NULL,
     price DECIMAL(20,8),

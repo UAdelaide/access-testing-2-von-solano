@@ -49,7 +49,9 @@ app.post('/message', (req, res) => {
     return res.status(400).send("missing fields");
   }
 
-  
+  const sql = `
+    INSERT INTO messages (sender_id, receiver_id, message) VALUES (?, ?, ?)
+  `
 
 });
 

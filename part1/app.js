@@ -10,8 +10,9 @@ const mysql = require('mysql2');
 const db = mysql.createPool({
     host: 'localhost',
     user: 'user',
-    
-})
+    password: 'password',
+    database: 'textbook_marketplace'
+});
 
 var app = express();
 

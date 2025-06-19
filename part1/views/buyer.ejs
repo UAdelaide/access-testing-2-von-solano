@@ -78,9 +78,9 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             seller_id: this.seller_id,
-                        book_id: this.book_id,
-                        message: this.message,
-                        sender_id: 1
+                            book_id: this.book_id,
+                            message: this.message,
+                            sender_id: 1
                         })
                     })
                     .then(res => res.ok ? alert('Message sent!') : alert('Error'))

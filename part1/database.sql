@@ -41,9 +41,9 @@ CREATE TABLE transactions(
     book_id INT NOT NULL,
     price DECIMAL(10,2),
     transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY buyer_id REFERENCES users(user_id),
-    FOREIGN KEY seller_id REFERENCES users(user_id),
-    FOREIGN KEY book_id REFERENCES books(book_id)
+    FOREIGN KEY (buyer_id) REFERENCES users(user_id),
+    FOREIGN KEY (seller_id) REFERENCES users(user_id),
+    FOREIGN KEY (book_id) REFERENCES books(book_id)
 );
 
 CREATE TABLE messages(
@@ -53,6 +53,6 @@ CREATE TABLE messages(
     message TEXT NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    FOREIGN KEY sender_id REFERENCES users(user_id),
-    FOREIGN KEY receiver_id REFERENCES users(user_id)
+    FOREIGN KEY (sender_id) REFERENCES users(user_id),
+    FOREIGN KEY (receiver_id) REFERENCES users(user_id)
 );

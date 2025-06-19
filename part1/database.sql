@@ -14,6 +14,8 @@ CREATE TABLE users(
 CREATE TABLE books(
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     seller_id INT AUTO_INCREMENT REFERENCES usres(user_id),
-    title VARCHAR(50)
+    title VARCHAR(100) NOT NULL,
+    ISBN VARCHAR(20) NOT NULL,
+    
 
 );

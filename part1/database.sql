@@ -42,8 +42,8 @@ CREATE TABLE transactions(
     price DECIMAL(10,2),
     transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (buyer_id) REFERENCES users(user_id) ON DELETE RESTRICT,
-    FOREIGN KEY (seller_id) REFERENCES users(user_id),
-    FOREIGN KEY (book_id) REFERENCES books(book_id)
+    FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE RESTRICT,
+    FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE RESTRICT
 );
 
 CREATE TABLE messages(

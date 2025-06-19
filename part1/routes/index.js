@@ -16,10 +16,8 @@ router.get('/buyer', (req, res) => {
     WHERE b.available = 1
     `, (err, results) => {
       if(err) return res.status(500).send('database error');
-      res.rebder
+      res.render('buyer', { books: results });
     });
-
-  res.render('buyer');
 });
 
 router.get('/seller', (req, res) => {

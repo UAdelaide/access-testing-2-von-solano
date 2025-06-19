@@ -68,8 +68,11 @@
             },
             methods: {
                 openForm(book_id, seller_id){
-                    
-                }
+                    this.book_id = book_id;
+                    this.seller_id = seller_id;
+                    this.showForm = true;
+                },
+                sendMessage()
             }
 
         })
